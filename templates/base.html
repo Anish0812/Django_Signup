@@ -1,0 +1,28 @@
+<html>
+<head>
+<title> Authentication app by D070_ANISH_DATTA_MEGHE </title>
+<style>
+*{font-size:50px;}
+.nav{background-color:black}
+.nav a{color:white;text-decoration:None;margin:50px;}
+</style>
+</head>
+<body>
+<center>
+<div class="nav">
+{% if user.is_autheniticated %}
+    <a href="{% url 'ulogout' %}"> Logout </a>
+    <a href="{% url 'ucp' %}"> Change Password </a>
+    <a href="{% url 'fb' %}"> Feedback </a>
+    
+{% else %}
+    <a href="{% url 'uhome' %}">Login </a>
+    <a href="{% url 'usignup' %}">Signup </a>
+  
+{% endif %}
+</div>
+{% block content %}
+{% endblock %}
+</center>
+</body>
+</html>
